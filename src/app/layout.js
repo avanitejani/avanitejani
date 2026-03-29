@@ -1,11 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider } from "./data/SidebarProvider";
+import { ThemeProvider } from "../../ThemeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Add",
-  description: "add",
+  title: "Avani Tejani",
+  description: "avani tejani",
 };
 
 export default function RootLayout({ children }) {
@@ -16,8 +17,14 @@ export default function RootLayout({ children }) {
       </head>
 
       <body>
+
+        <ThemeProvider>
         <SidebarProvider>
-          {children}</SidebarProvider></body>
+          {children}
+          </SidebarProvider>
+        </ThemeProvider>
+      
+      </body>
     </html>
   );
 }

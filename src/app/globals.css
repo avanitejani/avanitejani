@@ -13,6 +13,46 @@
   }
 }
 
+/* globals.css */
+:root {
+  --bg-color: #56af96;
+  /* Light Mode Green */
+  --text-color: #2d2d2d;
+  --accent-color: #467b6c;
+  --card-bg: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme='dark'] {
+  --bg-color: #2d1b36;
+  /* Dark Mode Purple */
+  --text-color: #ffffff;
+  --accent-color: #ae8fdb;
+  --card-bg: rgba(45, 27, 54, 0.6);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+
+/* Light Mode (Default) */
+:root {
+  --bg-color: #59cdc1;
+  --text-color: #2d2d2d;
+  --lamp-light: transparent;
+  /* लाइट बंद */
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --bg-color: #3e274a;
+  --text-color: #ffffff;
+  --lamp-light: rgba(255, 255, 200, 0.2);
+  /* लाइट चालू */
+}
+
 /* --- Your Animations and Utilities --- */
 
 @keyframes float {
