@@ -61,14 +61,6 @@ const ComingSoon = () => {
 
             </div>
 
-            {/* Corner Accents */}
-            <div className="absolute bottom-10 left-10 hidden lg:block">
-                <div className="text-white/10 text-xs font-mono">
-                    LOG_STATUS: COMPILING_ASSETS<br />
-                    ENV: PRODUCTION_BUILD
-                </div>
-            </div>
-
         </div>
     );
 };
