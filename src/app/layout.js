@@ -7,13 +7,19 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Avani Tejani",
   description: "avani tejani",
+  // icons: {
+  //   icon: "/img/avanitejani.png", // Ensure path is correct
+  //   shortcut: "/img/avanitejani.png",
+  //   apple: "/img/avanitejani.png", // Optional
+  // },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" style={{ scrollbarWidth: 'none' }}>
       <head>
-        <link rel="icon" href="/Common/favocoin.ico" />
+        {/* <link rel="icon" href="/Common/favocoin.ico" /> */}
+        <link rel="icon" href="/img/a.ico" />
       </head>
 
       <body>
