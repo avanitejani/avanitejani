@@ -176,3 +176,15 @@ body {
     background-position-y: 0
   }
 }
+
+/* Ye specific SVG aur uske bacchon par dark-mode inversion block kar dega */
+#contact svg {
+  color-scheme: light !important;
+  forced-color-adjust: none !important;
+}
+
+#contact svg path,
+#contact svg rect,
+#contact svg circle {
+  forced-color-adjust: none !important;
+}
