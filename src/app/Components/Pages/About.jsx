@@ -487,13 +487,104 @@ const About = () => { // Prop se isDarkMode hata diya kyunki ab context use ho r
                     >
                         <div className="w-full h-full relative">
                             {/* Animated SVG Border */}
-                            <svg className="absolute inset-0 w-full h-full animate-spin-slow">
+                            {/* <svg className="absolute inset-0 w-full h-full animate-spin-slow">
                                 <rect x="5" y="5" width="95%" height="95%" rx="30" fill="none"
                                     stroke={isDarkMode ? "#6fdcbf" : "#467b6c"} strokeWidth="2" strokeDasharray="20 10" />
-                            </svg>
+                            </svg> */}
+
+                            <div className="w-full h-full relative flex items-center justify-center">
+                                {/* --- THE NEURAL LIQUID ORBIT --- */}
+                                <svg
+                                    viewBox="0 0 100 100"
+                                    className="absolute inset-[-15%] w-[130%] h-[130%] pointer-events-none"
+                                >
+                                    <defs>
+                                        {/* Dynamic Gradient for the border */}
+                                        <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stopColor={isDarkMode ? "#ae8fdb" : "#56af96"} />
+                                            <stop offset="50%" stopColor={isDarkMode ? "#6fdcbf" : "#4facfe"} />
+                                            <stop offset="100%" stopColor={isDarkMode ? "#f1c40f" : "#ae8fdb"} />
+                                        </linearGradient>
+
+                                        {/* Glow Filter */}
+                                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="2" result="blur" />
+                                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                        </filter>
+                                    </defs>
+
+                                    {/* LAYER 1: Deep Morphing Glow (Slowest) */}
+                                    <motion.path
+                                        d="M50,10 C70,10 90,30 90,50 C90,70 70,90 50,90 C30,90 10,70 10,50 C10,30 30,10 50,10"
+                                        animate={{
+                                            d: [
+                                                "M50,5 C80,5 95,25 95,50 C95,75 80,95 50,95 C20,95 5,75 5,50 C5,25 20,5 50,5",
+                                                "M50,8 C75,2 98,20 92,50 C85,80 70,98 50,92 C30,85 2,70 8,50 C15,20 25,14 50,8",
+                                                "M50,5 C80,5 95,25 95,50 C95,75 80,95 50,95 C20,95 5,75 5,50 C5,25 20,5 50,5"
+                                            ],
+                                            rotate: [0, -360]
+                                        }}
+                                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                                        fill="none"
+                                        stroke="url(#liquidGrad)"
+                                        strokeWidth="0.5"
+                                        strokeOpacity="0.3"
+                                        style={{ transformOrigin: 'center', filter: 'blur(4px)' }}
+                                    />
+
+                                    {/* LAYER 2: The "Comet" Dashed Trail (Fast Clockwise) */}
+                                    <motion.path
+                                        d="M50,5 C80,5 95,25 95,50 C95,75 80,95 50,95 C20,95 5,75 5,50 C5,25 20,5 50,5"
+                                        animate={{
+                                            rotate: [0, 360],
+                                            strokeDashoffset: [0, -100]
+                                        }}
+                                        transition={{
+                                            rotate: { duration: 10, repeat: Infinity, ease: "linear" },
+                                            strokeDashoffset: { duration: 2, repeat: Infinity, ease: "linear" }
+                                        }}
+                                        fill="none"
+                                        stroke="url(#liquidGrad)"
+                                        strokeWidth="1.2"
+                                        strokeDasharray="15 85" // Creates a single long "comet" streak
+                                        strokeLinecap="round"
+                                        style={{ transformOrigin: 'center', filter: 'url(#glow)' }}
+                                    />
+
+                                    {/* LAYER 3: The Pulsing Imperfect Frame (Breathing) */}
+                                    <motion.path
+                                        d="M50,8 C75,2 98,20 92,50 C85,80 70,98 50,92 C30,85 2,70 8,50 C15,20 25,14 50,8"
+                                        animate={{
+                                            scale: [1, 1.05, 1],
+                                            opacity: [0.4, 0.8, 0.4]
+                                        }}
+                                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                        fill="none"
+                                        stroke={isDarkMode ? "#6fdcbf" : "#467b6c"}
+                                        strokeWidth="0.3"
+                                        strokeDasharray="1 4" // Dotted effect
+                                    />
+                                </svg>
+
+                                {/* THE PHOTO CONTAINER (Styled as a "Shard") */}
+                                <div className={`w-full h-full overflow-hidden transition-all duration-700 relative z-10
+        ${isDarkMode ? "bg-purple-900/20" : "bg-teal-100"}`}
+                                    style={{
+                                        borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
+                                        clipPath: 'polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%)', // This makes it look like a cut shard/diamond
+                                        maskImage: 'radial-gradient(circle, black 70%, transparent 100%)' // Soft edges
+                                    }}
+                                >
+                                    <img
+                                        src="/img/image.png"
+                                        alt="Avani"
+                                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80 hover:scale-110"
+                                    />
+                                </div>
+                            </div>
 
                             {/* The Photo with a custom Clip Path */}
-                            <div className={`w-full h-full overflow-hidden transition-all duration-700
+                            {/* <div className={`w-full h-full overflow-hidden transition-all duration-700
                                 ${isDarkMode ? "bg-purple-900/20" : "bg-teal-100"}`}
                                 style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }} // Organic Shape
                             >
@@ -502,7 +593,7 @@ const About = () => { // Prop se isDarkMode hata diya kyunki ab context use ho r
                                     alt="Avani"
                                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80"
                                 />
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Floating Status Indicator */}
