@@ -160,7 +160,7 @@ const Herosection = () => {
                                 // { name: "Home", href: "#", icon: <Home size={20} /> },
                                 { name: "About", href: "#about", icon: <User size={20} /> },
                                 { name: "Work", href: "#experience", icon: <Briefcase size={20} /> },
-                                { name: "Mail", href: "#contact", icon: <Mail size={20} /> }
+                                { name: "Contact", href: "#contact", icon: <Mail size={20} /> }
                             ].map((item) => (
                                 <a
                                     key={item.name}

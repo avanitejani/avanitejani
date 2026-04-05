@@ -376,7 +376,7 @@ const Contact = () => {
                     </div>
 
                     {/* SVG: Scaled via max-width to stay within container */}
-                    <svg ref={svgRef} viewBox="0 10 211.73 180" className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[450px] h-auto z-10 overflow-visible drop-shadow-2xl">
+                    <svg ref={svgRef} viewBox="0 10 211.73 180" className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[450px] h-auto z-10 overflow-visible drop-shadow-2xl" style={{ colorScheme: "light" }}>
                         <defs>
                             <clipPath id="background-clip">
                                 <path d="M39 153.73s31.57 19.71 77.26 15.21 90.18-37.23 90.36-72.33-8.82-80.28-33.59-86.29C136.84-6.57 114.13-5.82 88-2.82S34.73 11.45 16.71 48.24C-1.5 66.64-4.88 125.2 39 153.73z" fill="none" />
@@ -391,7 +391,7 @@ const Contact = () => {
                             </radialGradient>
                         </defs>
 
-                        <path className="bg transition-all duration-1000" d="M39 153.73s31.57 19.71 77.26 15.21 90.18-37.23 90.36-72.33-10.51-57-35.28-63-50.22 17-76.31 20-60.12-15.88-78.32 2.51S-4.88 125.2 39 153.73z" fill={isDarkMode ? "#ae8fdb" : "#6FDCC1"} />
+                        <path className="bg transition-all duration-1000" d="M39 153.73s31.57 19.71 77.26 15.21 90.18-37.23 90.36-72.33-10.51-57-35.28-63-50.22 17-76.31 20-60.12-15.88-78.32 2.51S-4.88 125.2 39 153.73z" fill={isDarkMode ? "#6FDCC1" : "#6FDCC1"} />
 
                         <g clipPath="url(#background-clip)">
                             <g className="me" opacity="0">
