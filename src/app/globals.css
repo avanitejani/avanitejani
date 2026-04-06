@@ -189,9 +189,22 @@ body {
   forced-color-adjust: none !important;
 }
 
-#contact svg,
-#contact rect,
-#contact path {
+#contact svg {
   color-scheme: light only !important;
+}
+
+#contact [fill="#ede3d1"],
+#contact [fill="url(#hair-shared-gradient)"] {
+  forced-color-adjust: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  #contact svg {
+    filter: none !important;
+  }
+}
+
+svg * {
   forced-color-adjust: none !important;
 }
