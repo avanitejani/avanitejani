@@ -188,3 +188,10 @@ body {
 #contact svg circle {
   forced-color-adjust: none !important;
 }
+
+#contact svg,
+#contact rect,
+#contact path {
+  color-scheme: light only !important;
+  forced-color-adjust: none !important;
+}
