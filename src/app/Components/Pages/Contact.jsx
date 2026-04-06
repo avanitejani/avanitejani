@@ -382,7 +382,10 @@ const Contact = () => {
                 </div>
 
                 {/* Right Side Animation: Responsive scaling for SVG and Blob */}
-                <div className="flex-1 relative flex items-center justify-center overflow-visible py-10 lg:py-0">
+                <div className="flex-1 relative flex items-center justify-center overflow-visible py-10 lg:py-0" style={{
+                    colorScheme: 'light only', // Safari के लिए विशेष
+                    forcedColorAdjust: 'none'
+                }}>
                     {/* Background Blob: Smaller on mobile */}
                     <div className={`absolute w-[280px] h-[220px] md:w-[400px] md:h-[300px] lg:w-[460px] lg:h-[360px] transition-all duration-1000 blur-3xl opacity-40 ${isDarkMode ? "bg-purple-600" : "bg-[#94E1D4]"}`}
                         style={{ borderRadius: "40% 60% 70% 30% / 40% 50% 60% 70%" }}>

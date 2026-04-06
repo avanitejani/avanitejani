@@ -12,6 +12,7 @@ export const metadata = {
   //   shortcut: "/img/avanitejani.png",
   //   apple: "/img/avanitejani.png", // Optional
   // },
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }) {
