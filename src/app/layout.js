@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
       <head>
         {/* <link rel="icon" href="/Common/favocoin.ico" /> */}
         <link rel="icon" href="/img/a.ico" />
+        <meta name="color-scheme" content="light only" />
       </head>
 
       <body>
